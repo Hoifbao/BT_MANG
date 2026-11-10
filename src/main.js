@@ -25,9 +25,9 @@ function kiemTraMangRong(idKetQua) {
 }
 
 function handleAddNumber() {
-    const input = document.getElementById("nhapN").value;
-    const number = input * 1;
-    if (input === "" || !Number.isInteger(number)) {
+    const number = document.getElementById("nhapN").value * 1;
+    // Ô trống thì "" * 1 = 0, nên vẫn kiểm tra ô trống riêng; chỉ nhận số nguyên
+    if (document.getElementById("nhapN").value === "" || !Number.isInteger(number)) {
         alert("Vui lòng nhập một số nguyên!");
         return;
     }
